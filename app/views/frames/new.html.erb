@@ -1,0 +1,26 @@
+<% frame_id = @frames.length + 1 %>
+<h2> For game <%= @game.id %>, frame <%= frame_id %> Enter each roll value below </h2>
+<p id="frame_num"><%= frame_id %> </p>
+<form action= "/frames" method="post">
+    <label for="roll1"> Roll1 </label>
+    <input id="roll1" type="text" name="frame[roll1]">
+    <label for="roll2"> Roll2 </label>
+    <input id="roll2" type="text" name="frame[roll2]">
+    <div id="form3">
+      <label for="roll3" > Roll3 </label>
+      <input id="roll3" type="text" name="frame[roll3]">
+    </div>
+   
+    <input value="Add rolls to frames" type="submit">
+</form>
+
+<script>
+
+ allowedValues = ['X', '-', '/', '1', '2', '3', '4', '5', '6', '7', '8', '9' ]
+ 
+ frame = document.getElementById("frame_num")
+ frame_num = frame.innerHTML
+ frame.style.display = 'none';
+ if ( parseInt(frame_num) !== 10)
+    form3.style.display = "none"    
+</script>

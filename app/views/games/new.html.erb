@@ -1,0 +1,8 @@
+<h2> For Game <%= @game.nil? ? 1 : @game.id + 1 %>, Frame 1 Enter each roll value below </h2>
+<form action= "/games" method="post">
+    <label for="roll1"> Roll1 </label>
+    <input id="roll1" type="text" name="game[roll1]">
+    <label for="roll2"> Roll2 </label>
+    <input id="roll2" type="text" name="game[roll2]">
+    <input value="Add rolls to frames" type="submit">
+</form>
