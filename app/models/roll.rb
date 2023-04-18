@@ -26,9 +26,9 @@ class Roll < ApplicationRecord
     #end   
       
     def handle_others
-        symbols = %w[X / -]
+        symbols = %w(X / -)
         self.numeric_value = value.to_i if !symbols.include?(self.value)
-        @total = self.numeric_value unless self.is_last
+        self.total = self.numeric_value unless self.is_last
     end
 
     def evaluate_roll_value
@@ -39,13 +39,12 @@ class Roll < ApplicationRecord
     end 
 
     def update_pending1(val)
-      total = self.total + val   
-      self.update(pending1: false, total: total)  if self.pending1
+      total = self.total + val  
+      Roll.update(self.id, pending1: false, total: 553)  if self.pending1
     end
-    
+  
     def update_pending2(val)
       total = self.total + val   
-      self.update(pending2: false, total: total)  if self.pending2
+      Roll.update(self.id, pending2: false, total: 554)  if self.pending2
     end   
-
 end

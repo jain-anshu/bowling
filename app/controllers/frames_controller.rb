@@ -15,10 +15,11 @@ class FramesController < ApplicationController
         @game = Game.last
         @frame = Frame.new(game_id: @game.id)
         @frame.save
-        roll1 = Roll.create(value: frame_params[:roll1], frame_id: @frame.id)
-        roll2 = Roll.create(value: frame_params[:roll2], frame_id: @frame.id) if frame_params[:roll2].present?
-        if frame_params[:roll3].present? && @game.frames.length == 10
-          roll3 = Roll.create(value: frame_params[:roll3], frame_id: @frame.id) 
+        is_last = (@game.frames.length == 10)
+        roll1 = Roll.create(value: frame_params[:roll1], frame_id: @frame.id, is_last: is_last)
+        roll2 = Roll.create(value: frame_params[:roll2], frame_id: @frame.id, is_last: is_last) if frame_params[:roll2].present?
+        if frame_params[:roll3].present? && is_last
+          roll3 = Roll.create(value: frame_params[:roll3], frame_id: @frame.id, is_last: true) 
         end  
         if @game.frames.length >= 10
           redirect_to game_path @game.id
