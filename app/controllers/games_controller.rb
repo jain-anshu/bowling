@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   end 
 
   def show
-    @game = Game.last
+    @game = Game.find(params[:id])
     @game.calculate_total()
     render 'show'
   end
