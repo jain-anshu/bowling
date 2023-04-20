@@ -14,9 +14,10 @@ application up and running.
 
 * Database initialization
 
-* How to run the test suite
-  ## rspec /Users/mk/apr/bowling/test/models/roll_spec.rb
-  ## rspec /Users/mk/apr/bowling/test/models/game_spec.rb
+### How to run the test suite
+  * rspec /Users/mk/apr/bowling/test/models/roll_spec.rb
+  
+  * rspec /Users/mk/apr/bowling/test/models/game_spec.rb
 
 * Services (job queues, cache servers, search engines, etc.)
 
