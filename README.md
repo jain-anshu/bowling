@@ -1,26 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a an app to enter and calculate score of a several games of bowling.
+The final score for the game will be shown after all the 10 frames are entered for each game.
+
+### Ruby version - ruby 3.2.0
+
+### Database creation
+  * rails db:create
+  * rails db:migrate db:test:prepare
 
 
-* Ruby version - ruby 3.2.0
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+### Running the app
+  * On console > rails s
+  * On browser > http://localhost:3000/games/new
+![Screen of Game start](app/assets/images/start_a%20game.png?raw=true "Starting a Game")
 
 ### How to run the test suite
   * rspec /Users/mk/apr/bowling/test/models/roll_spec.rb
   
   * rspec /Users/mk/apr/bowling/test/models/game_spec.rb
 
-* Services (job queues, cache servers, search engines, etc.)
+### To do
+  * Add client side validations
+  * Add more specs
 
-* Deployment instructions
 
-* ...
+
