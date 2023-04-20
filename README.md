@@ -13,8 +13,13 @@ The final score for the game will be shown after all the 10 frames are entered f
 ### Running the app
   * On console > rails s
   * On browser > http://localhost:3000/games/new
-![Screen of Game start](app/assets/images/start_a%20game.png?raw=true "Starting a Game")
+![Screen of Game start](app/assets/images/start.png?raw=true "Starting a Game")
 
+Frame 10
+![Screen of Last Frame](app/assets/images/screen10.png?raw=true "Last Frame")
+
+Display the Score
+![Screen of Last Frame](app/assets/images/end.png?raw=true "Display Score")
 ### How to run the test suite
   * rspec /Users/mk/apr/bowling/test/models/roll_spec.rb
   
