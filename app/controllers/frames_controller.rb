@@ -19,7 +19,9 @@ class FramesController < ApplicationController
     @game = Game.last
     @frame = Frame.create(game_id: @game.id)
     is_last = (@game.frames.length == 10)
-    Roll.create(value: frame_params[:roll1], frame_id: @frame.id, is_last:)
+    roll = Roll.create(value: frame_params[:roll1], frame_id: @frame.id, is_last:)
+    
+
     Roll.create(value: frame_params[:roll2], frame_id: @frame.id, is_last:) if frame_params[:roll2].present?
     if frame_params[:roll3].present? && is_last
       Roll.create(value: frame_params[:roll3], frame_id: @frame.id, is_last: true)

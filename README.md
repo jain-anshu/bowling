@@ -29,6 +29,8 @@ Display the Score
   * Display all 10 frames and their scores at the end ( not just the final score)
   * Add client side validations
   * Add more specs
+  * Fix all the linting issues
+  
 
 
 

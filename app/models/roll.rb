@@ -4,6 +4,15 @@ class Roll < ApplicationRecord
   belongs_to :frame
   before_save :evaluate_roll_value, if: :new_record?
 
+  validate :validate_input
+  
+  def validate_input
+    values = %w(X \ -)
+    numeric_values = (1..9).to_a.map{|dig| dig.to_s}
+    values += numeric_values
+    self.errors.add( :base, "Invalid input") unless values.include?(value)
+  end
+
   def handle_strike
     return unless value == 'X'
 
